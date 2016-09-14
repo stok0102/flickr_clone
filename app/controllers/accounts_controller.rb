@@ -20,6 +20,21 @@ class AccountsController < ApplicationController
     end
   end
 
+  def edit
+    current_user
+    @account = Account.find(params[:id])
+  end
+
+  def update
+    current_user
+    @account = Account.find(params[:id])
+    if @account.update(account_params)
+      redirect_to account_path(@account)
+    else
+      render :edit
+    end
+  end
+
 private
   def account_params
     params.require(:account).permit(:avatar, :name, :zodiac)

@@ -1,3 +1,5 @@
 = image_tag(@account.avatar.url(:medium))
 %h1= @account.name
 %h4 Zodiac Sign: #{@account.zodiac}
+
+= link_to "Edit Profile", edit_account_path(@account)
