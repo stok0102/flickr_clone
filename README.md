@@ -1,24 +1,36 @@
-# README
+# Flickr Clone :camera:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails application made to replicate the functionality of the site `https://flickr.com`. The process of building this site helped us practice using Paperclip (file uploading), Devise (user authentication), FactoryGirl and SimpleCov (unit and integration testing).
 
-Things you may want to cover:
+### Installation
 
-* Ruby version
+Open Terminal and clone the repository.  
+```
+$ cd Desktop
+$ git clone https://github.com/noahramey/flickr_clone.git
+```
 
-* System dependencies
+Navigate to the repository and bundle Ruby gems:
+```
+$ cd flickr_clone
+$ bundle install
+$ git remote remove origin
+```
 
-* Configuration
+Make sure Postgres is running on your local machine, then setup the database:
+```
+$ rails db:setup db:test:prepare
+```
 
-* Database creation
+Start the Rails server.
+```
+$ rails s
+```
 
-* Database initialization
+Open your browser and navigate to `localhost:3000`. You are now ready to start making your app!
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+License
+-------
 
-* Deployment instructions
-
-* ...
+MIT License. Copyright &copy; 2016 "Noah Ramey and Caleb Stokka"
