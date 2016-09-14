@@ -1,0 +1,10 @@
+%h1 New Profile
+
+=form_for @account do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :avatar
+  = f.file_field :avatar
+  = f.label :zodiac
+  = f.text_field :zodiac
+  = f.submit
