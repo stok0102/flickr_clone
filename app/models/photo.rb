@@ -1,5 +1,6 @@
 class Photo < ApplicationRecord
-  belongs_to :account, foreign_key: "creator_id"
+  has_many :tags
+  has_many :accounts, :through => :tags
   validates_presence_of :caption
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
