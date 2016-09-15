@@ -3,10 +3,17 @@
 %h4 Zodiac Sign: #{@account.zodiac}
 
 -if Photo.where(creator_id: @account.id).any?
+  %p #{@account.name}'s Photos
   - Photo.where(creator_id: @account.id).each do |photo|
     = link_to image_tag(photo.image.url(:original)), photo_path(photo)
 -else
   %p This user has no photos.
+-if @account.tags.any?
+  %p Tagged Photos
+  -@account.tags.each do |tag|
+    = link_to image_tag(Photo.find(tag.photo_id).image.url(:original)), photo_path(Photo.find(tag.photo_id))
+-else
+  %p This user is not tagged in any photos.
 -if user_signed_in?
   -if @account == current_user.account
     = link_to "Edit Profile", edit_account_path(@account)

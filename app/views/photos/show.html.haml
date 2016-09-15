@@ -8,3 +8,8 @@
   -if @account == current_user.account
     =link_to "Edit Photo", edit_photo_path(@photo)
     = link_to "Delete", photo_path(@photo), :data => {:confirm => "Are you sure?", :method => "delete"}
+%br/
+%h5 Tag a friend/enemy
+=form_for [@photo, @tag] do |f|
+  =f.collection_select(:account_id, Account.all, :id, :name)
+  =f.submit

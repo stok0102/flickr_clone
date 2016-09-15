@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @account = Account.find(@photo.creator_id)
+    @tag = @photo.tags.new
   end
 
   def new
