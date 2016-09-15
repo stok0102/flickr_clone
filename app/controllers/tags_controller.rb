@@ -6,8 +6,6 @@ class TagsController < ApplicationController
     @tag.photo_id = @photo.id
     if @tag.save
       redirect_to photo_path(@photo)
-    else
-      render :new
     end
   end
 
@@ -15,7 +13,7 @@ class TagsController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to photo_path(@photo)
+    redirect_to @photo
   end
 
 private

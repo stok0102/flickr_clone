@@ -13,6 +13,7 @@
   %p Tags on this Photo
   - @photo.tags.each do |tag|
     = link_to Account.find(tag.account_id).name, account_path(Account.find(tag.account_id))
+    = button_to "Delete Tag", photo_tag_path(@photo, tag), :method => "delete"
 -else
   %p There are no tags on this photo.
 %br/
