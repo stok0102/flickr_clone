@@ -7,4 +7,4 @@
 -if user_signed_in?
   -if @account == current_user.account
     =link_to "Edit Photo", edit_photo_path(@photo)
-    = link_to "Delete", photo_path(@photo), :data => {:method => "delete"}
+    = link_to "Delete", photo_path(@photo), :data => {:confirm => "Are you sure?", :method => "delete"}
