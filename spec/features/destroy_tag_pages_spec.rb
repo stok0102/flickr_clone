@@ -8,6 +8,6 @@ describe "delete tag path" do
     tag = Tag.create(account_id: account.id, photo_id: photo.id)
     visit photo_path(photo)
     click_on "Delete Tag"
-    expect(page).to have_content("This photo has no tags")
+    expect(page).to have_content("There are no tags on this photo.")
   end
 end
