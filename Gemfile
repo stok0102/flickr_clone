@@ -14,6 +14,7 @@ gem 'devise', '~> 4.2'
 gem 'haml'
 gem 'html2haml'
 gem 'paperclip', "~> 5.0.0"
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development, :test do
   gem 'byebug', platform: :mri
