@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :photo do
+    caption 'Look at this dog!'
+    location 'Reykjavik'
+    image_file_name 'super-pupper.png'
+  end
+
   factory :account do
     name 'Pupper'
     zodiac 'Sagittarius'

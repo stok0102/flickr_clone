@@ -3,12 +3,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: #555;
-  max-width: 60em;
+  // max-width: 60em;
   margin: 0 auto;
 }
 
 section {
-  margin-top: 80px;
+  margin-top: 47px;
   padding: 1em, 4em;
   line-height: 1.5em;
 }
@@ -52,4 +52,51 @@ a:hover {
 
 .navbar a:hover {
  background-color: #111;
+}
+
+// HEADER
+
+header {
+  background-color: #263d26;
+  background-image: url("header.jpeg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 0.5;
+  padding: 22vw 2em;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin-left: -10px;
+
+  h1 {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 300;
+  }
+
+  p {
+    color: white;
+    font-size: 0.85em;
+    font-weight: 200;
+  }
+
+  a {
+    border: 1px solid #e81c4f;
+    border-radius: 290486px;
+    color: white;
+    font-size: 0.6em;
+    letter-spacing: 0.2em;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: none 200ms ease-out;
+    transition-property: color, background;
+  }
+
+  a:hover {
+    background: #e81c4f;
+    color: white;
+  }
 }

@@ -2,4 +2,11 @@
 %h1= @account.name
 %h4 Zodiac Sign: #{@account.zodiac}
 
-= link_to "Edit Profile", edit_account_path(@account)
+-if Photo.where(creator_id: @account.id).any?
+  - Photo.where(creator_id: @account.id).each do |photo|
+    = link_to image_tag(photo.image.url(:original)), photo_path(photo)
+-else
+  %p This user has no photos.
+-if user_signed_in?
+  -if @account == current_user.account
+    = link_to "Edit Profile", edit_account_path(@account)

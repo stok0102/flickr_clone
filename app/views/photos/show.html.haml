@@ -1,0 +1,9 @@
+%h5= @photo.caption
+= image_tag(@photo.image.url(:original))
+-if @photo.location
+  %p Photo taken at #{@photo.location} by #{link_to @account.name, account_path(@account)}
+-else
+  %p Photo taken by #{link_to @account.name, account_path(@account)}
+-if user_signed_in?
+  -if @account == current_user.account
+    =link_to "Edit Photo", edit_photo_path(@photo)
