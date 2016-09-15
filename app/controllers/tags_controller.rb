@@ -2,7 +2,8 @@ class TagsController < ApplicationController
 
   def create
     @photo = Photo.find(params[:photo_id])
-    @tag = @photo.tags.new(tag_params)
+    @tag = Tag.new(tag_params)
+    @tag.photo_id = @photo.id
     if @tag.save
       redirect_to photo_path(@photo)
     else
